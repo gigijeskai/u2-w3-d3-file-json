@@ -40,4 +40,11 @@ let datiDaJson = `{
 }`;
 
 let studenti = JSON.parse(datiDaJson);
-console.log(studenti);
+
+let stringaStudenti = JSON.stringify(studenti);
+localStorage.setItem("studenti", stringaStudenti);
+
+function mostraStudenti() {
+  let mostra = localStorage.getItem("studenti");
+  document.querySelector("div").innerHTML += mostra;
+}
